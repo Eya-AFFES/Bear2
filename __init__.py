@@ -52,7 +52,7 @@ class HeadSirSkill(MycroftSkill):
         msg="MHL"
         ser00.write(bytes(msg, 'utf-8'))
         
-    def handle_MV_F_intent(self, message):
+    def handle_MH_F_intent(self, message):
         self.speak_dialog("MH.F")
         msg="MHF"
         ser00.write(bytes(msg, 'utf-8')) 
