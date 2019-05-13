@@ -28,7 +28,7 @@ class MoveStopSkill(MycroftSkill):
         #initialize()function defines each of the Intents of the Skill. 
         
         #Intents defined in vocab files
-        """
+
         MH_F_intent = IntentBuilder("MHFIntent").require("MHFKeyword").build()
         self.register_intent(MH_F_intent, self.handle_MH_F_intent)
 
@@ -37,13 +37,13 @@ class MoveStopSkill(MycroftSkill):
 
         MH_L_intent = IntentBuilder("MHLIntent").require("MHLKeyword").build()
         self.register_intent(MH_L_intent ,self.handle_MH_L_intent)
-"""
+
         SR_z_intent = IntentBuilder("SRzIntent").require("SRzKeyword").build()
         self.register_intent(SR_z_intent,self.handle_SR_z_intent)
 
         SR_o_intent = IntentBuilder("SRoIntent").require("SRoKeyword").build()
         self.register_intent(SR_o_intent,self.handle_SR_o_intent)
-   """   
+
     def handle_MH_F_intent(self, message):
         self.speak_dialog("MH.F")
         msg="MHF"
@@ -58,7 +58,7 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("MH.L")
         msg="MHL"
         ser00.write(bytes(msg, 'utf-8'))
-"""
+
     def handle_SR_z_intent(self, message):
         self.speak_dialog("SR.z")
         msg="SR0"
