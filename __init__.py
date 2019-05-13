@@ -31,16 +31,16 @@ class MoveStopSkill(MycroftSkill):
         self.register_intent(MH_F_intent, self.handle_MH_F_intent)
 
         MH_R_intent = IntentBuilder("MHRIntent").require("MHRKeyword").build()
-        self.register_intent(MH_R_intent,self.handle_MH_R_intent)
+        self.register_intent(MH_R_intent, self.handle_MH_R_intent)
 
         MH_L_intent = IntentBuilder("MHLIntent").require("MHLKeyword").build()
-        self.register_intent(MH_L_intent,self.handle_MH_L_intent)
+        self.register_intent(MH_L_intent, self.handle_MH_L_intent)
 
         SR_Z_intent = IntentBuilder("SRZIntent").require("SRZKeyword").build()
-        self.register_intent(SR_Z_intent,self.handle_SR_Z_intent)
+        self.register_intent(SR_Z_intent, self.handle_SR_Z_intent)
 
         SR_O_intent = IntentBuilder("SROIntent").require("SROKeyword").build()
-        self.register_intent(SR_O_intent,self.handle_SR_O_intent)
+        self.register_intent(SR_O_intent, self.handle_SR_O_intent)
     
     def handle_MH_F_intent(self, message):
         self.speak_dialog("MH.F")
