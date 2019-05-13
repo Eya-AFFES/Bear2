@@ -26,15 +26,13 @@ class MoveStopSkill(MycroftSkill):
         
     def initialize(self):
         #initialize()function defines each of the Intents of the Skill. 
-        
         #Intents defined in vocab files
-
         MH_F_intent = IntentBuilder("MHFIntent").require("MHFKeyword").build()
         self.register_intent(MH_F_intent, self.handle_MH_F_intent)
 
         MH_R_intent = IntentBuilder("MHRIntent").require("MHRKeyword").build()
         self.register_intent(MH_R_intent,self.handle_MH_R_intent)
-"""
+
         MH_L_intent = IntentBuilder("MHLIntent").require("MHLKeyword").build()
         self.register_intent(MH_L_intent ,self.handle_MH_L_intent)
 
@@ -43,7 +41,7 @@ class MoveStopSkill(MycroftSkill):
 
         SR_O_intent = IntentBuilder("SROIntent").require("SROKeyword").build()
         self.register_intent(SR_O_intent,self.handle_SR_O_intent)
-"""
+    
     def handle_MH_F_intent(self, message):
         self.speak_dialog("MH.F")
         msg="MHF"
@@ -53,7 +51,7 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("MH.R")
         msg="MHR"
         ser00.write(bytes(msg, 'utf-8')
-   """                 
+                    
     def handle_MH_L_intent(self, message):
         self.speak_dialog("MH.L")
         msg="MHL"
@@ -68,14 +66,13 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("SR.O")
         msg="SR1"
         ser00.write(bytes(msg, 'utf-8')) 
-"""    
+
     def stop(self):
         #This method tells Mycroft what to do if a stop intent is detected.
         #the pass statement is used as a placeholder; it doesn’t actually have any function. 
         #However, if the Skill had any active functionality, the stop() method would terminate 
         #the functionality, leaving the *Skill** in a known good state.
         pass
-
 
 def create_skill():
     return MoveStopSkill()
