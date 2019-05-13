@@ -37,11 +37,11 @@ class MoveStopSkill(MycroftSkill):
         MH_L_intent = IntentBuilder("MHLIntent").require("MHLKeyword").build()
         self.register_intent(MH_L_intent ,self.handle_MH_L_intent)
 
-        SR_0_intent = IntentBuilder("SR0Intent").require("SR0Keyword").build()
-        self.register_intent(SR_0_intent,self.handle_SR_0_intent)
+        SR_z_intent = IntentBuilder("SRzIntent").require("SRzKeyword").build()
+        self.register_intent(SR_z_intent,self.handle_SR_z_intent)
 
-        SR_1_intent = IntentBuilder("SR1Intent").require("SR1Keyword").build()
-        self.register_intent(SR_1_intent,self.handle_SR_1_intent)
+        SR_o_intent = IntentBuilder("SRoIntent").require("SRoKeyword").build()
+        self.register_intent(SR_o_intent,self.handle_SR_o_intent)
       
     def handle_MH_F_intent(self, message):
         self.speak_dialog("MH.F")
@@ -58,13 +58,13 @@ class MoveStopSkill(MycroftSkill):
         msg="MHL"
         ser00.write(bytes(msg, 'utf-8'))
 
-    def handle_SR_0_intent(self, message):
-        self.speak_dialog("SR.0")
+    def handle_SR_z_intent(self, message):
+        self.speak_dialog("SR.z")
         msg="SR0"
         ser00.write(bytes(msg, 'utf-8'))
                    
-    def handle_SR_1_intent(self, message):
-        self.speak_dialog("SR.1")
+    def handle_SR_o_intent(self, message):
+        self.speak_dialog("SR.o")
         msg="SR1"
         ser00.write(bytes(msg, 'utf-8')) 
     
