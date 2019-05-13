@@ -19,7 +19,7 @@ LOGGER = getLogger(__name__)
 #This section starts logging of the Skill in the mycroft-skills.log file. 
 #If you remove this line, your Skill will not log any errors, and you will have difficulty debugging.
 
-class MoveStopSkill(MycroftSkill):
+class HeadSirSkill(MycroftSkill):
     def __init__(self):
         #This method is the constructor, and the key function it has is to define the name of the Skill.
         super(HeadSirSkill, self).__init__(name="HeadSirSkill")
@@ -76,4 +76,4 @@ class MoveStopSkill(MycroftSkill):
 
 
 def create_skill():
-    return MoveStopSkill()
+    return HeadSirSkill()
