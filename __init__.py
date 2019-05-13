@@ -26,46 +26,55 @@ class MoveStopSkill(MycroftSkill):
         
     def initialize(self):
         #initialize()function defines each of the Intents of the Skill. 
+        
         #Intents defined in vocab files
-        MH_F_intent = IntentBuilder("MHFIntent").require("MHFKeyword").build()
-        self.register_intent(MH_F_intent, self.handle_MH_F_intent)
+        S_T_intent = IntentBuilder("STIntent").require("STKeyword").build()
+        self.register_intent(S_T_intent, self.handle_S_T_intent)
 
-        MH_R_intent = IntentBuilder("MHRIntent").require("MHRKeyword").build()
-        self.register_intent(MH_R_intent, self.handle_MH_R_intent)
+        MV_B_intent = IntentBuilder("MVBIntent").require("MVBKeyword").build()
+        self.register_intent(MV_B_intent,self.handle_MV_B_intent)
 
-        MH_L_intent = IntentBuilder("MHLIntent").require("MHLKeyword").build()
-        self.register_intent(MH_L_intent, self.handle_MH_L_intent)
-
-        SR_Z_intent = IntentBuilder("SRZIntent").require("SRZKeyword").build()
-        self.register_intent(SR_Z_intent, self.handle_SR_Z_intent)
-
-        SR_O_intent = IntentBuilder("SROIntent").require("SROKeyword").build()
-        self.register_intent(SR_O_intent, self.handle_SR_O_intent)
-    
-    def handle_MH_F_intent(self, message):
-        self.speak_dialog("MH.F")
-        msg="MHF"
-        ser00.write(bytes(msg, 'utf-8'))
+        MV_F_intent = IntentBuilder("MVFIntent").require("MVFKeyword").build()
+        self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
       
-    def handle_MH_R_intent(self, message):
-        self.speak_dialog("MH.R")
-        msg="MHR"
-        ser00.write(bytes(msg, 'utf-8')
-    
-    def handle_MH_L_intent(self, message):
-        self.speak_dialog("MH.L")
-        msg="MHL"
-        ser00.write(bytes(msg, 'utf-8')
-                    
-    def handle_SR_Z_intent(self, message):
-        self.speak_dialog("SR.Z")
-        msg="SR0"
+        MV_R_intent = IntentBuilder("MVRIntent").require("MVRKeyword").build()
+        self.register_intent(MV_R_intent, self.handle_MV_R_intent)
+
+        MV_L_intent = IntentBuilder("MVLIntent").require("MVLKeyword").build()
+        self.register_intent(MV_L_intent,self.handle_MV_L_intent)
+   
+        M_M_intent = IntentBuilder("MMIntent").require("MMKeyword").build()
+        self.register_intent(M_M_intent, self.handle_M_M_intent)
+     
+    def handle_MV_F_intent(self, message):
+        self.speak_dialog("MV.F")
+        msg="MVF"
         ser00.write(bytes(msg, 'utf-8'))
-                   
-    def handle_SR_O_intent(self, message):
-        self.speak_dialog("SR.O")
-        msg="SR1"
+        
+    def handle_MV_B_intent(self, message):
+        self.speak_dialog("MV.B")
+        msg="MVB"
+        ser00.write(bytes(msg, 'utf-8'))
+        
+    def handle_S_T_intent(self, message):
+        self.speak_dialog("ST")
+        msg="ST"
         ser00.write(bytes(msg, 'utf-8')) 
+    
+    def handle_MV_L_intent(self, message):
+        self.speak_dialog("MV.L")
+        msg="MVL"
+        ser00.write(bytes(msg, 'utf-8')) 
+        
+    def handle_MV_R_intent(self, message):
+        self.speak_dialog("MV.R")
+        msg="MVR"
+        ser00.write(bytes(msg, 'utf-8'))
+
+    def handle_M_M_intent(self, message):
+        self.speak_dialog("MM")
+        msg="MM"
+        ser00.write(bytes(msg, 'utf-8'))
 
     def stop(self):
         #This method tells Mycroft what to do if a stop intent is detected.
@@ -73,6 +82,7 @@ class MoveStopSkill(MycroftSkill):
         #However, if the Skill had any active functionality, the stop() method would terminate 
         #the functionality, leaving the *Skill** in a known good state.
         pass
+
 
 def create_skill():
     return MoveStopSkill()
