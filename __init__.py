@@ -44,27 +44,27 @@ class HeadSirSkill(MycroftSkill):
      
     def handle_MH_R_intent(self, message):
         self.speak_dialog("MH.R")
-        msg="MHR""+\n"
+        msg="MHR"+"\n"
         ser00.write(bytes(msg, 'utf-8'))
         
     def handle_MH_L_intent(self, message):
         self.speak_dialog("MH.L")
-        msg="MHL"+\n"
+        msg="MHL"+"\n"
         ser00.write(bytes(msg, 'utf-8'))
         
     def handle_MH_F_intent(self, message):
         self.speak_dialog("MH.F")
-        msg="MHF"+\n"
+        msg="MHF"+"\n"
         ser00.write(bytes(msg, 'utf-8')) 
     
     def handle_SR_O_intent(self, message):
         self.speak_dialog("SR.O")
-        msg="SR1"+\n"
+        msg="SR1"+"\n"
         ser00.write(bytes(msg, 'utf-8')) 
         
     def handle_SR_Z_intent(self, message):
         self.speak_dialog("SR.Z")
-        msg="SR0"+\n"
+        msg="SR0"+"\n"
         ser00.write(bytes(msg, 'utf-8'))
 
     def stop(self):
