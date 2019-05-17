@@ -1,5 +1,4 @@
 # Copyright 2016 Mycroft AI, Inc.
-#
 # This file is part of Mycroft Core.
 
 __author__ = 'Eya-AFFES'
